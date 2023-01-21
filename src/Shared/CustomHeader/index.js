@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CustomHeader = () => {
   return (
-    <div className="navbar bg-base-100 backdrop-blur-md bg-opacity-70 z-40 fixed border-b-2 border-base-300 top-0">
+    <div className="navbar bg-base-100 backdrop-blur-[8px] bg-opacity-70 z-40 fixed border-b-2 border-base-300 top-0">
       <div className="flex-1">
         <Link className="btn btn-ghost normal-case text-xl">React-With-DaisyUI</Link>
       </div>
@@ -12,7 +12,7 @@ const CustomHeader = () => {
           <input
             type="text"
             placeholder="Search"
-            className="input input-bordered"
+            className="input input-bordered input-sm"
           />
         </div>
         <div className="dropdown dropdown-end">
@@ -23,7 +23,7 @@ const CustomHeader = () => {
           </label>
           <ul
             tabIndex={0}
-            className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52"
+            className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded w-52"
           >
             <li>
               <Link className="justify-between">
