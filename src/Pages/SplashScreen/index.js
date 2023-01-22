@@ -20,7 +20,7 @@ const SplashScreen = () => {
             a id nisi.
           </p>
           <Link to="/home">
-            <button className="btn">Get Started</button>
+            <button className="btn btn-primary">Get Started</button>
           </Link>
         </div>
       </div>

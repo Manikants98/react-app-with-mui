@@ -18,7 +18,7 @@ const Home = () => {
               et a id nisi.
             </p>
             <Link to="/">
-              <button className="btn">Get Started</button>
+              <button className="btn btn-primary">Get Started</button>
             </Link>
           </div>
         </div>
@@ -26,6 +26,7 @@ const Home = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <img
+            alt=""
             src="https://placeimg.com/260/400/arch"
             className="max-w-sm rounded-lg shadow-2xl"
           />
@@ -43,6 +44,7 @@ const Home = () => {
       <div className="hero min-h-screen bg-base-200">
         <div className="hero-content flex-col lg:flex-row-reverse">
           <img
+            alt=""
             src="https://placeimg.com/260/400/arch"
             className="max-w-sm rounded-lg shadow-2xl"
           />
