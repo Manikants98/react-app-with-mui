@@ -1,7 +1,10 @@
+import { TextField } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
+import { selectDefault } from "../../Mock";
 import CustomFooter from "../../Shared/CustomFooter";
 import CustomHeader from "../../Shared/CustomHeader";
+import CustomSelect from "../../Shared/CustomSelect";
 
 const Home = () => {
   return (
@@ -75,12 +78,14 @@ const Home = () => {
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <input
+                <TextField
+                  size="small"
                   type="text"
                   placeholder="email"
-                  className="input input-bordered"
+                  className="!input !input-bordered"
                 />
               </div>
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
@@ -90,6 +95,7 @@ const Home = () => {
                   placeholder="password"
                   className="input input-bordered"
                 />
+
                 <label className="label">
                   <Link className="label-text-alt link link-hover">
                     Forgot password?
