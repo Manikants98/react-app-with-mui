@@ -19,20 +19,20 @@ const CustomSelect = ({
     <FormControl variant="filled" error={error}>
       <Text className="pb-1 text-xs font-medium ">{label}</Text>
       <Select
-        displayEmpty
+        displayEmpty={true}
         inputProps={{
           classes: {
-            Select:
-              "!bg-transparent !text-Slate-500 !pb-6 !text-left !text-xs !font-medium",
+            select:
+              "!bg-transparent !text-slate-500 !py-4 !text-left !text-md !font-medium",
           },
         }}
         renderValue={(selected) => {
           if (selected?.length === 0) {
-            return <span className="text-Slate-500">{placeholder}</span>;
+            return <span className="text-black">{placeholder}</span>;
           }
           return selected;
         }}
-        classes={{ iconFilled: "!text-Zinc-800 !text-3xl" }}
+        classes={{ iconFilled: "!text-zinc-800 !text-3xl" }}
         IconComponent={ExpandMoreIcon}
         onChange={(e) => handleChange(e)}
         className={classNames(
@@ -47,7 +47,7 @@ const CustomSelect = ({
               <MenuItem
                 key={menuItem?.id}
                 value={menuItem?.value}
-                className="text-slate-500 !textxs !font-medium"
+                className="text-slate-500 !text-xs !font-medium"
               >
                 {menuItem.value}
               </MenuItem>
@@ -57,7 +57,7 @@ const CustomSelect = ({
           <MenuItem
             key="0"
             disabled
-            className="text-slate-500 !textxs !font-medium"
+            className="text-slate-500 !text-xs !font-medium"
           >
             No Data Found
           </MenuItem>

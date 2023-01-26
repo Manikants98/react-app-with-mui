@@ -5,7 +5,9 @@ const CustomHeader = () => {
   return (
     <div className="navbar bg-base-100 backdrop-blur-[8px] bg-opacity-70 z-40 fixed border-b-2 border-base-300 top-0">
       <div className="flex-1">
-        <Link className="btn btn-ghost normal-case text-xl">React-With-DaisyUI</Link>
+        <Link className="btn btn-ghost normal-case text-xl" to="/home">
+          React-With-DaisyUI
+        </Link>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
@@ -26,16 +28,16 @@ const CustomHeader = () => {
             className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded w-52"
           >
             <li>
-              <Link className="justify-between">
+              <Link className="justify-between" to="/">
                 Profile
                 <span className="badge">New</span>
               </Link>
             </li>
             <li>
-              <Link>Settings</Link>
+              <Link to="/">Settings</Link>
             </li>
             <li>
-              <Link>Logout</Link>
+              <Link to="/">Logout</Link>
             </li>
           </ul>
         </div>

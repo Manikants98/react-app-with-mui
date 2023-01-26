@@ -19,7 +19,7 @@ const SplashScreen = () => {
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
             a id nisi.
           </p>
-          <Link to="/home">
+          <Link to="/signin">
             <button className="btn btn-primary">Get Started</button>
           </Link>
         </div>

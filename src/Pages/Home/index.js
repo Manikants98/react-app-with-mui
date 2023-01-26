@@ -85,11 +85,16 @@ const Home = () => {
                   className="!input !input-bordered"
                 />
               </div>
-
+              <CustomSelect
+                menuItem={selectDefault}
+                placeholder="Select"
+                label="Date"
+              />
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
                 </label>
+
                 <input
                   type="text"
                   placeholder="password"
@@ -97,7 +102,7 @@ const Home = () => {
                 />
 
                 <label className="label">
-                  <Link className="label-text-alt link link-hover">
+                  <Link className="label-text-alt link link-hover" to="/signin">
                     Forgot password?
                   </Link>
                 </label>
