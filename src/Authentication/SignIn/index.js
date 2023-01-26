@@ -19,10 +19,10 @@ const SignIn = () => {
       try {
         const response = await axiosInstance.post("/signin", reqBody);
         console.log(response.data);
-        localStorage.setItem("name", response.data.name);
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("email", response.data.email);
-        alert(response.data.message);
+        localStorage.setItem("name", response.data[0].name);
+        localStorage.setItem("token", response.data[0].token);
+        localStorage.setItem("email", response.data[0].email);
+        alert("You are signed in.");
         navigate("/home");
       } catch (errors) {
         console.log(errors);
@@ -43,7 +43,7 @@ const SignIn = () => {
           className="flex w-1/3 border-white border p-7 px-10 text-white bg-opacity-25 backdrop-blur-md border-opacity-10 flex-col  justify-center items-center rounded"
         >
           <p className="text-white text-4xl font-semibold my-7 uppercase">
-            Sign Up
+            Sign In
           </p>
 
           <div className="form-control w-full">
@@ -76,7 +76,9 @@ const SignIn = () => {
             <label className="label">
               <span>
                 You have't any account,
-                <Link className="mx-1 hover:!text-blue-500" to="/signup">Sign Up</Link>
+                <Link className="mx-1 hover:!text-blue-500" to="/signup">
+                  Sign Up
+                </Link>
               </span>
             </label>
           </div>

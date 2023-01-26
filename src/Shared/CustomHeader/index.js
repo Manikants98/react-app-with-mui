@@ -2,6 +2,12 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const CustomHeader = () => {
+  const name = localStorage.getItem("name");
+  const email = localStorage.getItem("email");
+  const handleLogout = () => {
+    localStorage.clear();
+  };
+
   return (
     <div className="navbar bg-base-100 backdrop-blur-[8px] bg-opacity-70 z-40 fixed border-b-2 border-base-300 top-0">
       <div className="flex-1">
@@ -27,17 +33,28 @@ const CustomHeader = () => {
             tabIndex={0}
             className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded w-52"
           >
+            <label
+              tabIndex={0}
+              className="btn btn-ghost btn-circle avatar flex justify-center"
+            >
+              <div className="rounded-full">
+                <img alt="" src="https://placeimg.com/80/80/people" />
+              </div>
+            </label>
+            <li className="text-center mt-1">{name}</li>
+            <li className="text-center text-xs mb-1">{email}</li>
             <li>
               <Link className="justify-between" to="/">
                 Profile
-                <span className="badge">New</span>
               </Link>
             </li>
             <li>
               <Link to="/">Settings</Link>
             </li>
             <li>
-              <Link to="/">Logout</Link>
+              <Link to="/" onClick={handleLogout}>
+                Logout
+              </Link>
             </li>
           </ul>
         </div>
