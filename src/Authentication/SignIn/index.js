@@ -17,11 +17,11 @@ const SignIn = () => {
         password: values.password,
       };
       try {
-        const response = await axiosInstance.post("/signin", reqBody);
+        const response = await axiosInstance.post("/user/login", reqBody);
         console.log(response.data);
-        localStorage.setItem("name", response.data[0].name);
-        localStorage.setItem("token", response.data[0].token);
-        localStorage.setItem("email", response.data[0].email);
+        localStorage.setItem("name", response?.data?.user?.name);
+        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("email", response?.data?.user?.email);
         alert("You are signed in.");
         navigate("/home");
       } catch (errors) {
@@ -30,17 +30,18 @@ const SignIn = () => {
     },
   });
 
+
   return (
     <>
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: `url("https://placeimg.com/1000/800/arch")`,
+          backgroundImage: `url("https://source.unsplash.com/random")`,
         }}
       >
         <form
           onSubmit={handleSubmit}
-          className="flex w-1/3 border-white border p-7 px-10 text-white bg-opacity-25 backdrop-blur-md border-opacity-10 flex-col  justify-center items-center rounded"
+          className="flex w-1/3 p-7 px-10 text-white bg-white bg-opacity-10 backdrop-blur-md border-opacity-10 flex-col justify-center items-center rounded"
         >
           <p className="text-white text-4xl font-semibold my-7 uppercase">
             Sign In

@@ -1,16 +1,15 @@
 import { TextField } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
-import { selectDefault } from "../../Mock";
-import CustomFooter from "../../Shared/CustomFooter";
-import CustomHeader from "../../Shared/CustomHeader";
-import CustomSelect from "../../Shared/CustomSelect";
 
-const Home = () => {
+// import CustomFooter from "../../Shared/CustomFooter";
+// import CustomHeader from "../../Shared/CustomHeader";
+
+const Home = ({header, footer}) => {
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
-        <CustomHeader />
+      <div className="hero min-h-screen bg-white">
+        {header}
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
           <div className="max-w-md">
@@ -85,11 +84,7 @@ const Home = () => {
                   className="!input !input-bordered"
                 />
               </div>
-              <CustomSelect
-                menuItem={selectDefault}
-                placeholder="Select"
-                label="Date"
-              />
+
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Password</span>
@@ -114,7 +109,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <CustomFooter />
+      {footer}
     </>
   );
 };

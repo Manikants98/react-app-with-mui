@@ -1,3 +1,4 @@
+import { Input } from "antd";
 import { useFormik } from "formik";
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
@@ -21,7 +22,7 @@ const SignUp = () => {
         password: values.password,
       };
       try {
-        const response = await axiosInstance.post("/signup", reqBody);
+        const response = await axiosInstance.post("/user", reqBody);
         console.log(response.data);
         alert(response.data.message);
         navigate("/signin");
@@ -36,13 +37,13 @@ const SignUp = () => {
       <div
         className="hero min-h-screen"
         style={{
-          backgroundImage: `url("https://placeimg.com/1000/800/arch")`,
+          backgroundImage: `url("https://source.unsplash.com/random")`,
         }}
       >
         <form
         autoComplete="off"
           onSubmit={handleSubmit}
-          className="flex w-1/3 border-white border p-7 px-10 text-white bg-opacity-25 backdrop-blur-md border-opacity-10 flex-col  justify-center items-center rounded"
+          className="flex w-1/3 p-7 px-10 text-white bg-white bg-opacity-10 backdrop-blur-md flex-col justify-center items-center rounded"
         >
           <p className="text-white text-4xl font-semibold my-7 uppercase">
             Sign Up
@@ -52,7 +53,7 @@ const SignUp = () => {
               <label className="label">
                 <span className="label-text text-white">First Name</span>
               </label>
-              <input
+              <Input
                 id="first_name"
                 name="first_name"
                 type="text"
@@ -65,7 +66,7 @@ const SignUp = () => {
               <label className="label">
                 <span className="label-text text-white">Last Name</span>
               </label>
-              <input
+              <Input
                 id="last_name"
                 name="last_name"
                 type="text"
@@ -79,7 +80,7 @@ const SignUp = () => {
             <label className="label">
               <span className="label-text text-white">Email</span>
             </label>
-            <input
+            <Input
               id="email"
               name="email"
               type="Email"
@@ -92,7 +93,7 @@ const SignUp = () => {
             <label className="label">
               <span className="label-text text-white">Password</span>
             </label>
-            <input
+            <Input
               autoComplete="off"
               id="password"
               name="password"
@@ -106,7 +107,7 @@ const SignUp = () => {
             <label className="label">
               <span className="label-text text-white">Confirm Password</span>
             </label>
-            <input
+            <Input
               autoComplete="off"
               id="Confirm_password"
               name="Confirm_password"
