@@ -22,7 +22,7 @@ const SignUp = () => {
         password: values.password,
       };
       try {
-        const response = await axiosInstance.post("/user", reqBody);
+        const response = await axiosInstance.post("/signup", reqBody);
         console.log(response.data);
         alert(response.data.message);
         navigate("/signin");

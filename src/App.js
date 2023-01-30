@@ -1,6 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import SignIn from "./Authentication/SignIn";
 import SignUp from "./Authentication/SignUp";
+import Users from "./Authentication/Users";
 import Home from "./Pages/Home";
 import SplashScreen from "./Pages/SplashScreen";
 import CustomFooter from "./Shared/CustomFooter";
@@ -22,6 +23,7 @@ const App = () => {
             }
           />
           <Route path="/Layout" element={<Sidebar component={<Home />} />} />
+          <Route path="/Users" element={<Sidebar component={<Users />} />} />
         </Routes>
       </BrowserRouter>
     </>

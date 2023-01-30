@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const axiosInstance = axios.create({
-  baseURL: "https://my-task-manager.fly.dev/",
+  baseURL: "https://api-mkx-node.fly.dev/",
 });

@@ -17,13 +17,13 @@ const SignIn = () => {
         password: values.password,
       };
       try {
-        const response = await axiosInstance.post("/user/login", reqBody);
+        const response = await axiosInstance.post("/signin", reqBody);
         console.log(response.data);
-        localStorage.setItem("name", response?.data?.user?.name);
-        localStorage.setItem("token", response.data.token);
-        localStorage.setItem("email", response?.data?.user?.email);
+        localStorage.setItem("name", response?.data[0]?.name);
+        localStorage.setItem("token", response.data[0].token);
+        localStorage.setItem("email", response?.data[0]?.email);
         alert("You are signed in.");
-        navigate("/home");
+        navigate("/layout");
       } catch (errors) {
         console.log(errors);
       }

@@ -1,4 +1,4 @@
-import { TextField } from "@mui/material";
+
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 const Home = ({header, footer}) => {
   return (
     <>
-      <div className="hero min-h-screen bg-white">
+      <div className="hero min-h-screen">
         {header}
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-center text-neutral-content">
@@ -77,7 +77,7 @@ const Home = ({header, footer}) => {
                 <label className="label">
                   <span className="label-text">Email</span>
                 </label>
-                <TextField
+                <input
                   size="small"
                   type="text"
                   placeholder="email"
